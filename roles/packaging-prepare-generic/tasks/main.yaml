@@ -5,6 +5,9 @@
     release: "{{ ansible_distribution_release }}"
   register: package
 
+- name: Debug statement for created dictionary  
+  debug: var=package
+
 - name: Install ubuntu-cloud-keyring package
   shell: |
     docker exec --user root:root builder sh -c '
